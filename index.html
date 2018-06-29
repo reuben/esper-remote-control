@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Esper remote control</title>
+    <style>
+      #buttons {
+        display: flex;
+        margin-top: 15px;
+      }
+
+      .column {
+        margin: 15px;
+        position: relative;
+        display: flex;
+        flex-flow: row wrap;
+      }
+
+      .column > * {
+        box-sizing: border-box;
+        flex: 1 1 100%;
+        margin: 3px;
+      }
+
+      .column-fixed {
+        flex: 0 0 200px;
+      }
+
+      button, input {
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <p id="status">
+    </p>
+
+    <button id="undo">Desfazer</button>
+    <input id="find-text" type="text"></input>
+    <button id="find">Buscar</button>
+    <button class="cmd" id="find.removeHighlight">Esconder resultados</button>
+    <button id="error">Comando não reconhecido</button>
+
+    <div id="buttons">
+      <div class="column column-fixed">
+        <button class="cmd" id="history.back">history.back</button>
+        <button class="cmd" id="history.forward">history.forward</button>
+        <button class="cmd" id="tab.open">tab.open</button>
+        <button class="cmd" id="tab.close">tab.close</button>
+        <button class="cmd" id="bookmark">bookmark</button>
+        <button class="cmd" id="clipboard.cut">clipboard.cut</button>
+        <button class="cmd" id="clipboard.copy">clipboard.copy</button>
+        <button class="cmd" id="clipboard.paste">clipboard.paste</button>
+        <button class="cmd" id="page.download">page.download</button>
+        <button class="cmd" id="zoom.in">zoom.in</button>
+        <button class="cmd" id="zoom.out">zoom.out</button>
+        <button class="cmd" id="scroll.down">scroll.down</button>
+        <button class="cmd" id="scroll.up">scroll.up</button>
+      </div>
+      <div class="column column-fixed">
+        <button class="cmd" id="youtube.play">youtube.play</button>
+        <button class="cmd" id="youtube.pause">youtube.pause</button>
+        <button class="cmd" id="youtube.volumeup">youtube.volumeup</button>
+        <button class="cmd" id="youtube.volumedown">youtube.volumedown</button>
+        <button class="cmd" id="youtube.next">youtube.next</button>
+        <button class="cmd" id="youtube.previous">youtube.previous</button>
+      </div>
+      <div class="column column-fixed">
+        <button class="cmd" id="twitter.next">twitter.next</button>
+        <button class="cmd" id="twitter.previous">twitter.previous</button>
+        <button class="cmd" id="twitter.open">twitter.open</button>
+        <button class="cmd" id="twitter.close">twitter.close</button>
+        <button class="cmd" id="twitter.favorite">twitter.favorite</button>
+        <button class="cmd" id="twitter.reply">twitter.reply</button>
+        <button class="cmd" id="twitter.retweet">twitter.retweet</button>
+      </div>
+    </div>
+
+    <script>
+      // You can also require other files to run in this process
+      require('./renderer.js');
+    </script>
+  </body>
+</html>
